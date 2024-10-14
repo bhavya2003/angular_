@@ -1,0 +1,60 @@
+<div class="p-5 lg:p-10 mt-10">
+
+    <p class="text-gray-500 py-10">Catalouge/Clothes/Bottomwear</p>
+
+    <section class="lg:grid grid-cols-3 lg:gap-10">
+
+        <!-- Image Section -->
+        <div class="col-span-2 flex items-center justify-center">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/k/a/s/30-gtladiesjeans244-guti-original-imagq45hdngfez3w.jpeg?q=70" alt="" class="w-3/4 lg:w-3/4 object-cover">
+        </div>
+
+        <!-- Details Section -->
+        <div class="col-span-1 space-y-6 mt-10 lg:mt-0">
+            <!-- Product Title -->
+            <div class="space-y-2">
+                <p class="font-bold text-2xl text-gray-800">OLIVIA</p>
+                <p class="text-lg text-gray-700">Regular Jeans Solid Black</p>
+                <!-- Description -->
+                <p class="text-md text-gray-600 mt-4">This is a pair of regular jeans in solid black. It's perfect for casual wear and offers a comfortable fit.</p>
+            </div>
+
+            <!-- Pricing Section -->
+            <div class="flex items-center space-x-4 text-xl mt-4">
+                <p class="text-green-600 font-semibold">₹499</p>
+                <p class="text-gray-500 line-through">₹1599</p>
+                <p class="text-red-500 font-semibold">75% OFF</p>
+            </div>
+
+            <!-- Size Selection -->
+            <div class="text-lg font-semibold mt-4">
+                <p>Select Size:</p>
+                <mat-radio-group class="space-x-5 mt-2" aria-label="Select an option" [(ngModel)]="selectedSize">
+                    <mat-radio-button value="S">S</mat-radio-button>
+                    <mat-radio-button value="M">M</mat-radio-button>
+                    <mat-radio-button value="L">L</mat-radio-button>
+                    <mat-radio-button value="XL">XL</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <div>
+                <button style="padding: 1.5rem; background-color: #FFC107;" class="w-full text-white font-bold rounded-lg" (click)="handleAddToCart()" mat-raised-button>
+                    Add To Cart
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Products Section -->
+        <section class="mt-10">
+            <h3 class="py-5 text-gray-500">YOU MIGHT ALSO LIKE</h3>
+            <div style="display: flex; justify-content: space-between;">
+              <app-recommendations title="Bottomwear" [products]="bottomwear"></app-recommendations>
+            </div>
+            <div class="flex justify-around flex-wrap">
+                <app-recommendations title="Tops" [products]="tops"></app-recommendations>
+            </div>
+          </section>
+</div>
+

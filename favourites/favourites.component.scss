@@ -1,0 +1,41 @@
+.fav {
+    list-style-type: none;
+    margin: 25px auto;
+    padding: 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+ul.fav li {
+    float: left;
+    margin-right: 15%;
+    overflow: hidden;
+}
+
+ul.fav li:last-child {
+    margin-right: 0;
+}
+
+ul.fav li img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+ul.fav li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.trend:hover {
+    opacity: 0.5;
+}
+
+.low-cost:hover {
+    opacity: 0.5;
+}

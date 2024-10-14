@@ -1,0 +1,56 @@
+.brands-logos {
+    list-style-type: none;
+    background-color: #e3c244;
+    margin: 10px auto;
+    padding: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+ul.brands-logos li {
+    float: left;
+    margin-right: 10%;
+}
+
+ul.brands-logos li:last-child {
+    margin-right: 0;
+}
+
+ul.brands-logos li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+.h-m {
+    width: 120px;
+
+}
+
+.obey {
+    width: 90px;
+
+}
+
+.shopify {
+    width: 90px;
+
+}
+
+.lacoste {
+    width: 90px;
+
+}
+
+.levis {
+    width: 90px;
+
+}
+
+.amazon {
+    width: 90px;
+
+}

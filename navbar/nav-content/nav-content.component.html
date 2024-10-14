@@ -1,0 +1,100 @@
+<!-- <!-- <div class="w-full bg-black text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-3 gap-8">
+
+      <!-- Clothing Section -->
+      <!-- <div class="flex flex-col">
+        <h2 class="text-base font-medium mb-2">Clothing</h2>
+        <div class="space-y-2">
+          <button (click)="handleNavigate('/'+selectedSection+'/'+item.id+'/'+section.id)" mat-button *ngFor="let section of category['clothing']?.items" 
+                  class="text-left text-sm text-gray-300 hover:text-white focus:outline-none">  
+            {{section.name}}
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Accessories Section -->
+      <!-- <div class="flex flex-col">
+        <h2 class="text-base font-medium mb-2">Accessories</h2>
+        <div class="space-y-2">
+          <button mat-button *ngFor="let section of category['accessories'].items" 
+                  class="text-left text-sm text-gray-300 hover:text-white focus:outline-none">
+            {{section.name}}
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> --> 
+
+<!-- <div class="w-full bg-black text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-3 gap-8"> -->
+
+      <!-- Clothing Section -->
+      <!-- <div class="flex flex-col">
+        <h2 class="text-base font-medium mb-2">Clothing</h2>
+        <div class="space-y-2">
+          <button 
+            *ngFor="let section of category.CATALOGUE.sections[0]?.items"
+            (click)="handleNavigate('/'+selectedSection+'/'+items.id+'/'+section.id)"
+            class="text-left text-sm text-gray-300 hover:text-white focus:outline-none">
+            {{ section.name }}
+          </button>
+        </div>
+      </div> -->
+
+      <!-- Accessories Section -->
+      <!-- <div class="flex flex-col">
+        <h2 class="text-base font-medium mb-2">Accessories</h2>
+        <div class="space-y-2">
+          <button 
+            *ngFor="let section of category.CATALOGUE.sections[1]?.items"
+            (click)="handleNavigate('/'+section.href)"
+            class="text-left text-sm text-gray-300 hover:text-white focus:outline-none">
+            {{ section.name }}
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+ 
+<div class="w-full  text-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-3 gap-8"> 
+
+      
+      <div class="flex flex-col">
+        <h2 class="text-base font-medium mb-2">Clothing</h2>
+        <div class="space-y-2">
+          <button 
+            *ngFor="let section of category.CATALOGUE.sections[0]?.items"
+            (click)="handleNavigate(getClothingUrl(section.name))"
+            class="text-left text-sm text-gray-300 hover:text-white focus:outline-none">
+            {{ section.name }}
+          </button>
+        </div>
+      </div>
+
+    
+      <div class="flex flex-col">
+        <h2 class="text-base font-medium mb-2">Accessories</h2>
+        <div class="space-y-2">
+          <button 
+            *ngFor="let section of category.CATALOGUE.sections[1]?.items"
+            (click)="handleNavigate(getAccessoriesUrl(section.name))"
+            class="text-left text-sm text-gray-300 hover:text-white focus:outline-none">
+            {{ section.name }}
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

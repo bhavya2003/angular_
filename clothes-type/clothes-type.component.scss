@@ -1,0 +1,47 @@
+.clothes-type {
+    list-style-type: none;
+    margin: 25px auto;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+ul.clothes-type li {
+    float: left;
+    margin-right: 15%;
+    overflow: hidden;
+}
+
+ul.clothes-type li:last-child {
+    margin-right: 0;
+}
+
+ul.clothes-type li img {
+    border-radius: 10px;
+}
+
+ul.clothes-type li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.sweatshirt:hover {
+    opacity: 0.5;
+    cursor: pointer;
+
+}
+
+.coats:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.tees:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

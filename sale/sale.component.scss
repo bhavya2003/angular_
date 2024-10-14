@@ -1,0 +1,40 @@
+.sale {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+    padding: 5px;
+
+}
+
+.paydaysale {
+    width: 100%;
+    height: 130%;
+    object-fit: cover;
+}
+
+.sale-text {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    color: black;
+}
+
+.sale-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sale-text p {
+    font-size: 16px;
+}
+
+.sale-text h1 span:first-child {
+    background-color: white; 
+    color: black; 
+    padding: 5px 10px;
+    display: inline-block;
+}
+

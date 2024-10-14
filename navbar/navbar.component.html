@@ -1,0 +1,56 @@
+<div class=" top-0 Z-50 right-0 left-0 items-center justify-between flex">
+
+    <div class="h-16 flex items-center  justify-between">
+
+        <div class="flex items-center">
+
+            <div class="mt-6">
+                <img (click)="navigate('/home')" src="assets/Images/logo-removebg-preview.png" alt="logo"
+                    id="brand-logo" class="cursor-pointer">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="flex items-center">
+        <div>
+            <button class="open-button" (click)="openNavbarContent('CATALOGUE')" mat-button>CATALOGUE</button>
+        </div>
+        <div>
+            <button class="open-button" (click)="navigate('/trends-on-insta')" mat-button>FAVOURITE</button>
+        </div>
+
+        <button (click)="NavigateTo('Cart')" mat-icon-button>
+            <mat-icon>shopping_cart</mat-icon>
+        </button>
+
+        <button (click)="onOpenLoginModal()" *ngIf="!userProfile" mat-flat-button>LOGIN</button>
+
+        <div *ngIf="userProfile" class="ml-3 flex items-center">
+            <div class="flex items-center space-x-5">
+                <span class="font-bold text-lg">{{userProfile.firstName}}</span>
+
+
+                <button mat-button [matMenuTriggerFor]="ProfileMenu">
+                    <img class="h-10 W-10" src="assets/Images/user-profile-icon-free-vector-removebg-preview.png">
+                </button>
+                <mat-menu #ProfileMenu="matMenu">
+                    <button (click)="NavigateTo('/login')" mat-menu-item>Admin</button>
+                    <button (click)="NavigateTo('account/orders')" mat-menu-item>My Orders</button>
+                    <button mat-menu-item (click)="handleLogout(userProfile.email)">Logout</button>
+                </mat-menu>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<div *ngIf="isNavbarContentOpen" class="modal-container">
+    <app-nav-content [selectedSection]="currentSection"></app-nav-content>
+</div>

@@ -1,0 +1,49 @@
+<!-- <div (click)="navigate('/product-details/products.id')"   class="productcard w-[17] m-3 transition-all cursor pointer">
+    <div class="h-2-[rem]">
+
+        <img class="h-full w-full" [src]="product.imageUrl" alt="">
+
+    </div>
+
+    <div class="textPart p-3">
+
+        <div>
+            <p class="opacity-80">{{product.brand}}</p>
+            <p>{{product.title}}</p>
+            <p class="textgray600">{{product.color}}</p>
+        </div>
+
+        <div class="flexflex-wrap space-x-2 items-center">
+            <p class="font-bold">₹ {{product.price}}</p>
+            <p class="text-gray-600">{{product.discountedPercent}}%</p>
+        </div>
+
+    </div>
+</div>  -->
+
+<div  (click)="navigate('/product-details/product.id')"   class="productsCards w-[17rem] m-3 transition-all hover:shadow-lg hover:scale-105 cursor-pointer">
+
+    <div class="h-[20rem]">
+        <img class="h-full w-full" [src]="product.imageUrl" alt="">
+
+    </div>
+
+    <div class="textPart p-3 rounded-b-md">
+
+        <div>
+            <p class="opacity-80">{{product.brand}}</p>
+            <p>{{product.title}}</p>
+            <p class="text-gray-600">{{product.color}}</p>
+        </div>
+
+        <div class="flex flex-wrap space-x-2 items-center">
+            <p class="font-bold">₹ {{product.discountedPrice}}</p>
+            <p class="text-gray-600 line-through">₹{{product.price}}</p>
+        
+
+        </div>
+
+    </div>
+
+</div>
+
