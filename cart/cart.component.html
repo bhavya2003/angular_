@@ -1,0 +1,61 @@
+<main class="mt-10">
+    <div class="py-10 lg:grid grid-cols-3 lg:px-16 relative">
+        <section class="lg:col-span-2 lg:px-5">
+            <div class="box p-5 space-y-3">
+                <ng-container *ngIf="cartItems && cartItems.length > 0; else emptyCart">
+                    <div *ngFor="let item of cartItems; let last = last">
+                        <app-cart-item [cartItem]="item" showButton="true"></app-cart-item>
+                        <mat-divider *ngIf="!last"></mat-divider>
+                    </div>
+                </ng-container>
+
+                <ng-template #emptyCart>
+                    <div *ngIf="cartItems.length === 0">
+                    <p class="text-center text-gray-600">Your cart is empty.</p>
+                    </div>
+
+                </ng-template>
+            </div>
+        </section>
+
+        <section class="px-5 sticky top-0 h-[100vh] mt-5 lg:mt-0">
+            <ng-container *ngIf="cartItems && cartItems.length > 0">
+                <div class="box p-5 rounded-md">
+                    <p class="font-bold text-gray-500">PRICE DETAILS</p>
+                    <mat-divider></mat-divider>
+
+                    <div class="space-y-3">
+                        <div class="flex justify-between pt-3">
+                            <span>Total Price:</span>
+                            <span>₹{{ totalPrice }}</span>
+                        </div>
+
+                        <div class="flex justify-between pt-3">
+                            <span>Discount:</span>
+                            <span>₹{{ discount }}</span>
+                        </div>
+
+                        <div class="flex justify-between pt-3">
+                            <span>Delivery Charges:</span>
+                            <span>₹{{ deliveryCharges }}</span>
+                        </div>
+
+                        <mat-divider></mat-divider>
+
+                        <div class="flex justify-between pt-3">
+                            <span>Total:</span>
+                            <span class="font-bold">₹{{ totalPrice - discount + deliveryCharges }}</span>
+                        </div>
+
+                        <button 
+                            (click)="navigateTocheckout()" 
+                            class="text-lg mt-8 w-full rounded-md p-4 bg-[#e4c243] text-white" 
+                            mat-raised-button>
+                            CHECKOUT
+                        </button>
+                    </div>
+                </div>
+            </ng-container>
+        </section>
+    </div>
+</main>
