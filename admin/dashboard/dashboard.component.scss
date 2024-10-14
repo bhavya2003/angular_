@@ -1,0 +1,50 @@
+.user-dashboard {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .section {
+    width: 48%; /* Adjust width to make them equally wide */
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Allow scrolling */
+    max-height: 400px; /* Adjust height as needed */
+  }
+  
+  .section h2 {
+    margin-bottom: 10px;
+  }
+  
+  .section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .section li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .email-column {
+    width: 150px; /* Fixed width for email */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Truncate long emails */
+  }
+  
+  .status {
+    color: green;
+  }
+  
+  .status.inactive {
+    color: red;
+  }
+  
+  .delete-btn {
+    color: red;
+    cursor: pointer;
+  }
+  

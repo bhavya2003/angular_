@@ -1,0 +1,46 @@
+      <div class="bg-black text-white mt-0 px-5">
+        <div class="container mx-auto py-5">
+            <div class="flex justify-between">
+            
+                <div>
+                    <h3 class="font-bold text-lg">OLIVIA FASHION STUDIO</h3>
+                    <p>Complete your style with awesome clothes from us.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <fa-icon [icon]="['fab', 'facebook']" class="text-yellow-500 text-3xl"></fa-icon>
+                        <fa-icon [icon]="['fab', 'instagram']" class="text-yellow-500 text-3xl"></fa-icon>
+                        <fa-icon [icon]="['fab', 'twitter']" class="text-yellow-500 text-3xl"></fa-icon>
+                        <fa-icon [icon]="['fab', 'linkedin']" class="text-yellow-500 text-3xl"></fa-icon>
+                    </div>
+                </div>
+    
+            
+                <div>
+                    <h3 class="font-bold text-lg">Company</h3>
+                    <ul class="mt-4 space-y-2">
+                        <button class="flex"><li><a (click)="NavigateTo('about-us')" class="hover:text-yellow-500">About</a></li></button>
+                        <button class="flex"><li><a (click)="NavigateTo('contact-us')" class="hover:text-yellow-500">Contact us</a></li></button>
+                        <button><li><a (click)="NavigateTo('support')" class="hover:text-yellow-500">Support</a></li></button>
+                    </ul>
+                </div>
+    
+            
+                <div>
+                    <h3 class="font-bold text-lg">Quick Link</h3>
+                    <ul class="mt-4 space-y-2">
+                        <button class="flex"><li><a (click)="NavigateTo('size-guide')" class="hover:text-yellow-500">Size Guide</a></li></button>
+                        <button><li><a (click)="NavigateTo('FAQs')" class="hover:text-yellow-500">FAQs</a></li></button>
+                    </ul>
+                </div>
+    
+
+                <div>
+                    <h3 class="font-bold text-lg">Legal</h3>
+                    <ul class="mt-4 space-y-2">
+                        <button class="flex"><li><a (click)="NavigateTo('terms-conditions')" class="hover:text-yellow-500">Terms & Conditions</a></li></button>
+                        <button><li><a (click)="NavigateTo('about-us')" class="hover:text-yellow-500">Privacy Policy</a></li></button>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    

@@ -1,0 +1,38 @@
+<div class="p-14 shadow-lg rounded-md flex items-start justify-between bg-white">
+    
+    <div class="w-[6rem] h-[6rem] lg:w-[9rem] lg:h-[9rem] flex-shrink-0">
+        <img class="w-full h-full object-cover object-top rounded-md"
+            [src]="cartItem.product.imageUrl"
+            alt="">
+
+
+        <div *ngIf="showButton" class="mt-4 flex items-center justify-start space-x-3" style="margin-left: -10px;">
+            <button mat-mini-fab (click)="updateCartItem(-1)" [disabled]="true" color="primary">
+                <mat-icon>remove</mat-icon>
+            </button>
+
+            <span class="py-1 px-7 border border-gray-800 rounded-sm">{{cartItem.quantity}}</span>
+
+            <button mat-mini-fab (click)="updateCartItem(1)">
+                <mat-icon>add</mat-icon>
+            </button>
+
+            
+            <button (click)="removeCartItem()" mat-stroked-button >Remove</button>
+        </div>
+    </div>
+
+    <div class="ml-10 flex-1">
+        
+        <p class="text-gray-500">{{cartItem.product.brand}}</p>
+        <p class="font-semibold">{{cartItem.product.title}}</p>
+        <p class="text-gray-500">Size: {{ cartItem.size }}, {{cartItem.product.color}}</p>
+
+        <div class="flex space-x-2 items-center pt-2">
+            <p class="text-gray-500 line-through">₹{{ cartItem.price }}</p>
+            <p class="font-semibold text-lg">₹{{ cartItem.discountedPrice }}</p>
+            <p class="font-semibold text-green-600">70% off</p>
+        </div>
+    </div>
+</div>
+

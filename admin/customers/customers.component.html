@@ -1,0 +1,68 @@
+<!-- <div class="container mx-auto px-4 py-6">
+
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white shadow-md rounded-lg">
+        <thead>
+          <tr class="bg-gray-100 text-left text-gray-600 font-semibold">
+            <th class="py-3 px-6">#</th>
+            <th class="py-3 px-6">Name</th>
+            <th class="py-3 px-6">Email</th>
+            <th class="py-3 px-6">Status</th>
+            <th class="py-3 px-6 text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b hover:bg-gray-50">
+            <td class="py-4 px-6">1</td>
+            <td class="py-4 px-6">John Doe</td>
+            <td class="py-4 px-6">john&#64;example.com</td>
+            <td class="py-4 px-6">
+              <span class="text-green-500 font-semibold">Active</span>
+            </td>
+            <td class="py-4 px-6 text-center"> -->
+              <!-- <button class="text-indigo-600 hover:text-indigo-900 font-semibold">View</button> -->
+              <!-- <button class="text-red-600 hover:text-red-900 font-semibold ml-4">Delete</button>
+            </td>
+          </tr> -->
+          <!-- Repeat rows for each customer -->
+        <!-- </tbody>
+      </table>
+    </div>
+  </div> -->
+
+  
+
+  <!-- src/app/customers/customers.component.html -->
+<div class="container mx-auto px-4 py-6">
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white shadow-md rounded-lg">
+      <thead>
+        <tr class="bg-gray-100 text-left text-gray-600 font-semibold">
+          <th class="py-3 px-6">#</th>
+          <th class="py-3 px-6">Name</th>
+          <th class="py-3 px-6">Email</th>
+          <th class="py-3 px-6">Status</th>
+          <th class="py-3 px-6 text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index" class="border-b hover:bg-gray-50">
+          <td class="py-4 px-6">{{ i + 1 }}</td>
+          <td class="py-4 px-6">{{ user.name }}</td>
+          <td class="py-4 px-6">{{ user.email }}</td>
+          <td class="py-4 px-6">
+            <span [ngClass]="{'text-green-500 font-semibold': user.isActive, 'text-red-500': !user.isActive}">
+              {{ user.isActive ? 'Active' : 'Inactive' }}
+            </span>
+          </td>
+          <td class="py-4 px-6 text-center">
+            <button (click)="deleteUser(user._id)" class="text-red-600 hover:text-red-900 font-semibold ml-4">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

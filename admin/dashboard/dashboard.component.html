@@ -1,0 +1,36 @@
+
+    <div class="container mx-auto p-6">
+      <div class="w-full p-10 bg-gray-50 rounded-lg shadow-md">
+        
+        <h5 class="text-xl font-semibold mb-4 text-gray-800">New Customers</h5>
+        <table class="w-full text-left table-auto border-separate" style="border-spacing: 10px 10px;">
+          <thead>
+            <tr>
+              <th class="p-4 text-gray-600">First Name</th>
+              <th class="p-4 text-gray-600">Last Name</th>
+              <th class="p-4 text-gray-600">Email</th>
+              <th class="p-4 text-gray-600">Status</th>
+              <th class="p-4 text-gray-600">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users" class="bg-gray-50"> 
+              <td class="p-4 text-gray-800">{{ user.firstName }}</td>
+              <td class="p-4 text-gray-800">{{ user.lastName }}</td>
+              <td class="p-4 text-gray-800">{{ user.email }}</td>
+              <td class="p-4">
+                <span [ngClass]="{'text-green-500 font-semibold': user.isActive, 'text-red-500': !user.isActive}">
+                  {{ user.isActive ? 'Active' : 'Inactive' }}
+                </span>
+              </td>
+              <td class="p-4">
+                <button (click)="deleteUser(user._id)" class="text-red-600 hover:text-red-900 font-semibold">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    

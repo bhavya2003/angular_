@@ -1,0 +1,107 @@
+<mat-card class="orders-card">
+  <mat-toolbar color="primary" class="toolbar">
+    <span>All Orders</span>
+  </mat-toolbar>
+
+  <div class="orders-table-container">
+    <table mat-table [dataSource]="orders" class="mat-elevation-z8 orders-table">
+
+      <!-- Image Column -->
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef> Image </th>
+        <td mat-cell *matCellDef="let order">
+          <img [src]="order.imageUrl" alt="Product Image" class="order-image" />
+        </td>
+      </ng-container>
+
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let order"> {{ order.title }} </td>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price </th>
+        <td mat-cell *matCellDef="let order"> ₹{{ order.price }} </td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let order">
+          <button mat-raised-button [ngStyle]="{'background-color': getStatusColor(order.status), 'color': 'white'}" class="status-btn">
+            {{ order.status }}
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Update Column -->
+      <ng-container matColumnDef="update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>
+        <td mat-cell *matCellDef="let order">
+          <button mat-button class="update-btn" [matMenuTriggerFor]="updateMenu">Update</button>
+          <mat-menu #updateMenu="matMenu">
+            <button mat-menu-item (click)="updateStatus(order, 'CONFIRMED')">Confirmed</button>
+            <button mat-menu-item (click)="updateStatus(order, 'SHIPPED')">Ship Order</button>
+            <button mat-menu-item (click)="updateStatus(order, 'DELIVERED')">Deliver Order</button>
+          </mat-menu>
+        </td>
+      </ng-container>
+
+      <!-- Delete Column -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let order" class="delete-cell">
+          <button mat-button (click)="deleteOrder(order)" class="delete-btn">Delete</button>
+        </td>
+      </ng-container>
+
+      <!-- Table Header and Rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</mat-card>
+
+<style>
+  .orders-card {
+    border-radius: 8px;
+    overflow: hidden; /* Ensures that any overflow content is hidden */
+    box-shadow: none; /* Remove default Material shadow */
+  }
+
+  .orders-table-container {
+    max-height: 400px; /* Set a max height for scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
+
+  .order-image {
+    width: 50px; /* Adjust image size */
+    height: 50px;
+    object-fit: cover; /* Ensure the image covers the area */
+    border-radius: 5px; /* Optional: add rounded corners to images */
+  }
+
+  .delete-cell {
+    text-align: right; /* Align delete button to the right */
+  }
+
+  .delete-btn {
+    background: none; /* Remove any background */
+    color: inherit; /* Use the current text color */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer */
+  }
+
+  .status-btn {
+    border-radius: 5px; /* Add rounded corners */
+    padding: 6px 12px; /* Adjust padding for better appearance */
+  }
+
+  /* Specific color for Delivered status */
+  .status-btn {
+    background-color: #4CAF50; /* Default color */
+  }
+</style>

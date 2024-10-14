@@ -1,0 +1,46 @@
+<!-- <div class="space-y-3">
+    <p class="font-semibold">OLIVIA</p>
+    <p>flat no-04 saranga apt</p>
+
+    <div class="space-y-1">
+        <p class="font-semibold">Phone Number:</p>
+        <p>+918324939679</p>
+    </div>
+
+
+
+</div> -->
+
+<!-- <div class="p-6 border border-gray-300 rounded-lg shadow-sm bg-white">
+    <div class="space-y-3">
+        <p class="font-semibold text-lg text-gray-900">{{address.firstName}} {{address.lastName}}</p>
+        <p class="text-gray-700">{{address.city}},{{address.streetAddress}} {{address.state}},{{address.zipCode}} </p>
+
+        <div class="space-y-1">
+            <p class="font-semibold text-gray-900">Phone Number</p>
+            <p class="text-gray-700">{{address.mobile}}</p>
+        </div>
+
+        <div class="space-y-1">
+            <p class="font-semibold text-gray-900">Email:</p>
+            <p class="text-gray-700">olivia&#64;example.com</p>
+        </div>
+    </div>
+</div> -->
+
+<div class="p-4 border border-gray-300 rounded-lg shadow-sm bg-white">
+    <div class="space-y-3">
+        <p class="font-semibold text-lg text-gray-900">{{address?.firstName}} {{address?.lastName}}</p>
+        <p class="text-gray-700">{{address?.city}}, {{address?.streetAddress}} {{address?.state}}, {{address?.zipCode}}</p>
+
+        <div class="space-y-1">
+            <p class="font-semibold text-gray-900">Phone Number</p>
+            <p class="text-gray-700">{{address?.mobile}}</p>
+        </div>
+
+        <div class="space-y-1">
+            <p class="font-semibold text-gray-900">Email:</p>
+            <p class="text-gray-700">{{address?.email}}</p> <!-- Updated email -->
+        </div>
+    </div>
+</div>
