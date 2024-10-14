@@ -1,0 +1,46 @@
+<p class="py 10 lg:px-36">
+
+    <div class="py-5">
+
+        <h4 class="text-center py-2">ORDER STATUS</h4>
+
+    </div>
+
+    <div class="py-10">
+        <!-- <app-shippingform [address]="order.shippingAddress"></app-shippingform> -->
+        <app-addresscard [address]="order?.shippingAddress"></app-addresscard>
+
+    </div>
+
+    <div class="space-y-5 py-5 pt-20">
+
+        <ng-container *ngFor="let item of order.orderItems">
+            <div class="rounded-md p-5 lg:flex items-center justify-between box ">
+
+<div class="flex items-center">
+
+    <img class="w-20 h-20 object-cover object-top"   [src]="item.product.imageUrl" alt="">
+
+    <div class="ml-5 space-y-2">
+        <p class="text-lg front font-semibold">{{item.product.title}}</p>
+        <p class="opacity-50 text-xs font-semibold space-x-5">
+            <span>color: yellow</span>
+            <span>Size:{{item.size}}</span>
+        </p>
+        <p>
+            <span>seller:{{item.product.brand}}</span>
+            <span>₹{{item.product.discountedPrice}}</span>
+        </p>
+
+    </div>
+
+</div>
+
+
+            </div>
+        </ng-container>
+
+    </div>
+
+
+ 

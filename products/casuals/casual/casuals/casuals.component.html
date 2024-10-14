@@ -1,0 +1,36 @@
+ <div class="flex flex-col items-center">
+    <main class="px-4 sm:px-6 max-w-7xl pb-10">
+        <div class="flex items-baseline justify-between border-gray-200 pb-6 pt-24">
+            <h3 class="text-4xl font-bold">Casuals</h3>
+            <div class="flex items-center">
+                <div>
+                    <button mat-button [matMenuTriggerFor]="topMenu">
+                        sort
+                    </button>
+                    <mat-menu #topMenu="matMenu">
+                        <button (click)="handleSingleSelectFilter('price_low', 'sort')" mat-menu-item>
+                            Price Low to High
+                        </button>
+                        <button (click)="handleSingleSelectFilter('price_high', 'sort')" mat-menu-item>
+                            Price High to Low
+                        </button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+
+        <section class="pt-6">
+            <div class="grid grid-cols-1 gap-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+                <div class="lg:col-span-3">
+                    <div class="flex flex-wrap justify-evenly">
+                        <ng-container *ngFor="let casual of combinedCasuals">
+                            <app-casual-product-cards [product]="casual"></app-casual-product-cards>
+                      </ng-container>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

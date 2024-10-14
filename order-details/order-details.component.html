@@ -1,0 +1,48 @@
+<!-- <div class="py-20 px-5 lg:px-20">
+
+    <div class="py-5">
+
+        <h4 class="text-center py-2">Order Status</h4>
+        <app-tracker activeStep="PLACED" [steps]="steps"></app-tracker>
+
+    </div>
+
+    <div class="space-y-10 pt-10">
+
+        <div class="box px-10">
+            <h3 class="text-lg font-semibold py-5">Shipping address</h3>
+            <app-addresscard></app-addresscard>
+        </div>
+
+        <div class="space-y-6 mt-20">
+
+            <div *ngFor="let orderItem of Order">
+                <app-order-card></app-order-card>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div> -->
+
+<div class="py-20 px-5 lg:px-20">
+    <div class="py-5">
+        <h4 class="text-center py-2 text-2xl font-bold">ORDER STATUS</h4>
+        <app-tracker activeStep="PLACED" [steps]="steps"></app-tracker>
+    </div>
+
+    <div class="space-y-10 pt-10">
+        <div class="box px-10">
+            <h3 class="text-lg font-semibold py-5">Shipping Address</h3>
+            <app-addresscard></app-addresscard>
+        </div>
+
+        <div class="space-y-6 mt-20">
+            <div *ngFor="let orderItem of orders">
+                <app-order-card></app-order-card>
+            </div>
+        </div>
+    </div>
+</div>

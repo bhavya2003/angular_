@@ -1,0 +1,44 @@
+<div class="flex flex-col items center">
+
+    <main class="px-4 sm:px-6 max-w-7x1 pb-10">
+
+        <div class="flex  items-baseline justify-between border-gray-200 pb-6 pt-24">
+            <h3 class="text-4xl font-bold">Earrings</h3>
+
+            <div class="flex items-center">
+
+                <div>
+                    <button mat-button [matMenuTriggerFor]="topMenu">
+                        sort
+                    </button>
+                    <mat-menu #topMenu="matMenu">
+                        <button mat-menu-item>Price Low to High</button>
+                        <button mat-menu-item>Price High to Low</button>
+                    </mat-menu>
+                </div>
+
+            </div>
+
+        </div>
+        <mat-divider></mat-divider>
+
+        <section class="pt-6">
+
+                <div class="lg:col-span-3">
+                    <div class="flex flex-wrap justify-evenly">
+                        <ng-container *ngFor="let earring of combinedearrings">
+                              <app-product-card-earrings [product]="earring"></app-product-card-earrings>
+                        </ng-container>
+
+                    </div>
+
+                    
+                </div>
+
+            
+
+
+        
+
+
+
